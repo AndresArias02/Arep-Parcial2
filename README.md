@@ -19,6 +19,7 @@ Finalización: Este proceso continúa hasta que se encuentra el elemento o se ha
 No encontrado: Si se llega al final del conjunto sin encontrar el valor, se indica que el elemento no está presente.
 La búsqueda lineal no requiere que los datos estén ordenados y es efectiva para conjuntos de datos pequeños, pero su eficiencia disminuye a medida que el tamaño del conjunto de datos aumenta, ya que en el peor caso, se deben comparar todos los elementos.
 
+´´´ git bash
  public Response linearSearch(List<Integer> values, Integer value) {
         int output = -1;
         List<String> stringValues = Collections.singletonList(values.toString());
@@ -29,6 +30,7 @@ La búsqueda lineal no requiere que los datos estén ordenados y es efectiva par
         }
         return new Response("linearSearch", stringValues, String.valueOf(value), String.valueOf(output));
     }
+ ´´´
 
 - Búsqueda Binaria
 La búsqueda binaria es un método más eficiente que la búsqueda lineal, pero requiere que el conjunto de datos esté ordenado previamente. Su proceso se describe de la siguiente manera:
