@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>LinearSearch</h1>
+<form>
+    <label for="value">Value:</label><br>
+    <label for="list">List:</label><br>
+    <input type="text" id="value" name="value"><br><br>
+    <input type="text" id="list" name="list"><br><br>
+    <input type="button" value="Submit" onclick="loadGetMsg()">
+</form>
+<div id="getrespmsg"></div>
+
+<script>
+    function loadGetMsg() {
+        let valueVar = document.getElementById("value").value;
+        let listVar = document.getElementById("list").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("getrespmsg").innerHTML =
+            this.responseText;
+        }
+        xhttp.open("GET", "/linearSearch?list="+listVar+"&value="+valueVar);
+        xhttp.send();
+    }
+</script>
+
+<h1>BinarySearch</h1>
+<form action="/">
+    <label for="value">Value:</label><br>
+    <label for="list">List:</label><br>
+    <input type="text" id="valueBS" name="value"><br><br>
+    <input type="text" id="listBS" name="list"><br><br>
+    <input type="button" value="Submit" onclick="loadGetMsg()">
+</form>
+<div id="getrespmsgg"></div>
+
+<script>
+    function loadGetMsgg() {
+        let valueVar = document.getElementById("valueBS").value;
+        let listVar = document.getElementById("listBS").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("getrespmsgg").innerHTML =
+            this.responseText;
+        }
+        xhttp.open("GET", "/binarySearch?list="+listVar+"&value="+valueVar);
+        xhttp.send();
+    }
+</script>
+</body>
+</html>
