@@ -1,5 +1,7 @@
 # Arep-Parcial2
+
 ## Servicios de busqueda lineal y binaria completos junto con los metodos de los controladores que permiten resibir la peticiones segun la busqueda que se desee implementar:
+
 Sus servicios  deben incluir dos funciones. 
 Uno recibe una lista de cadenas y un valor a buscar e implementa la búsqueda lineal :  linearSearch(lista, valor) retorna un json con el índice de la primera aparición del valor o con -1 si no encuentra el valor
 Uno recibe una lista ordenada de cadenas y un valor a buscar e implementa la búsqueda binaria de manera recursiva : binarySearch(n), retorna un json con el índice de la primera aparición del valor o con -1 si no encuentra el valor.
@@ -19,7 +21,7 @@ Finalización: Este proceso continúa hasta que se encuentra el elemento o se ha
 No encontrado: Si se llega al final del conjunto sin encontrar el valor, se indica que el elemento no está presente.
 La búsqueda lineal no requiere que los datos estén ordenados y es efectiva para conjuntos de datos pequeños, pero su eficiencia disminuye a medida que el tamaño del conjunto de datos aumenta, ya que en el peor caso, se deben comparar todos los elementos.
 
-´´´ git bash
+
  public Response linearSearch(List<Integer> values, Integer value) {
         int output = -1;
         List<String> stringValues = Collections.singletonList(values.toString());
@@ -30,7 +32,7 @@ La búsqueda lineal no requiere que los datos estén ordenados y es efectiva par
         }
         return new Response("linearSearch", stringValues, String.valueOf(value), String.valueOf(output));
     }
- ´´´
+ 
 
 - Búsqueda Binaria
 La búsqueda binaria es un método más eficiente que la búsqueda lineal, pero requiere que el conjunto de datos esté ordenado previamente. Su proceso se describe de la siguiente manera:
@@ -60,7 +62,9 @@ private int binary(List<Integer> values, Integer value){
         }
         return output;
     }
+    
 ## La parte del cliente que permite introducir la lista con los valores ya sea que esten ordenados o no y y el valor especifico a buscar tambien se encuentra implementado en html y javascript :
+
 <!DOCTYPE html>
 <html>
 <head>
