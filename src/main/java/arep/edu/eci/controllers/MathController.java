@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/")
@@ -26,22 +27,22 @@ public class MathController {
 
 
     @GetMapping("/LinearSearch")
-    public ResponseEntity<Response> linearSearch(@RequestParam List<String> values, @RequestParam String value){
-        List<Integer> integerValues = new ArrayList<>();
-        for(String s : values){
-            integerValues.add(Integer.parseInt(s));
+    public ResponseEntity<Response> linearSearch(@RequestParam String list, @RequestParam String value){
+        List<Integer> listInt = new ArrayList<>();
+        for (String s : list.split(",")) {
+            listInt.add(Integer.parseInt(s));
         }
-        Response response = mathService.linearSearch(integerValues,Integer.parseInt(value));
+        Response response = mathService.linearSearch(listInt,Integer.parseInt(value));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/BinarySearch")
-    public ResponseEntity<Response> binarySearch(@RequestParam List<String> values, @RequestParam String value){
-        List<Integer> integerValues = new ArrayList<>();
-        for(String s : values){
-            integerValues.add(Integer.parseInt(s));
+    public ResponseEntity<Response> binarySearch(@RequestParam String list, @RequestParam String value){
+        List<Integer> listInt = new ArrayList<>();
+        for (String s : list.split(",")) {
+            listInt.add(Integer.parseInt(s));
         }
-        Response response = mathService.binarySearch(integerValues,Integer.parseInt(value));
+        Response response = mathService.binarySearch(listInt,Integer.parseInt(value));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
